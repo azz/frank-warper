@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<style>
+img {
+    animation: spin 1s linear infinite;
+    border-radius: 1000px;
+}
+
+@keyframes spin {
+    100% {
+    transform: rotate(360deg); 
+    }
+}
+
+#hell {
+    display: block;
+    font-size: 2em;
+}
+
+html, body {
+    background: black;
+    color: white;
+    font-family: "Comic Sans MS";
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 1em;
+}
+</style>
+
+<img id=warper src="https://files.slack.com/files-pri/T1MHP27MX-FCDD9TG22/image.png">
+
+<marquee id=hell direction=right behavior=alternate>Hell</marquee>
+
+<audio autoplay id=frank>
+  <source src="http://srv07.us.savethevideo.com/Hello.._Frank_Walker_from_National_Tiles-youtube-8ua52DFuWyk-251-192-0-6.mp3" type="audio/mp3"></source>
+</audio>
+
+<script>
+setInterval(() => {
+  hell.innerHTML += "o";
+
+  if (Math.random() > 0.9 && hell.textContent.length > 6) {
+    hell.innerHTML = "Hell";
+  }
+}, 100);
+
+warper.onclick = () => {
+  frank.play();
+  setTimeout(() => {
+    frank.pause();
+  }, 2000);
+};
+</script>
