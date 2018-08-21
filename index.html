@@ -1,55 +1,68 @@
 <!DOCTYPE html>
+<html>
 
-<style>
-img {
-    animation: spin 1s linear infinite;
-    border-radius: 1000px;
-    cursor: pointer;
-}
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-@keyframes spin {
-    100% {
-    transform: rotate(360deg); 
+  <style>
+    img {
+      animation: spin 1s linear infinite;
+      border-radius: 1000px;
+      cursor: pointer;
+      width: 30vw;
     }
-}
 
-#hell {
-    display: block;
-    font-size: 2em;
-}
+    @keyframes spin {
+      100% {
+        transform: rotate(360deg);
+      }
+    }
 
-html, body {
-    background: black;
-    color: white;
-    font-family: "Comic Sans MS";
-    text-align: center;
-    margin: 0 auto;
-    margin-top: 1em;
-}
-</style>
+    #hell {
+      display: block;
+      font-size: 3em;
+    }
 
-<img id=warper src="frank.png">
+    html,
+    body {
+      background: black;
+      color: white;
+      font-family: "Comic Sans MS";
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 1em;
+    }
+  </style>
+</head>
 
-<marquee id=hell direction=right behavior=alternate>Hell</marquee>
+<body>
 
-<audio autoplay id=frank>
-  <source src="audio.mp3" type="audio/mp3"></source>
-</audio>
+  <img id=warper src="frank.png">
 
-<script>
-setInterval(() => {
-  hell.innerHTML += "o";
+  <marquee id=hell direction=right behavior=alternate>Hell</marquee>
 
-  if (Math.random() > 0.9 && hell.textContent.length > 6) {
-    hell.innerHTML = "Hell";
-  }
-}, 100);
+  <audio id=frank>
+    <source src="audio.mp3" type="audio/mp3"></source>
+  </audio>
 
-warper.onclick = () => {
-  frank.play();
-  setTimeout(() => {
-    frank.pause();
-    frank.currentTime = 0;
-  }, 1250);
-};
-</script>
+  <script>
+    setInterval(() => {
+      hell.innerHTML += "o";
+
+      if (Math.random() > 0.9 && hell.textContent.length > 6) {
+        hell.innerHTML = "Hell";
+      }
+    }, 100);
+
+    warper.onclick = () => {
+      frank.play();
+      setTimeout(() => {
+        frank.pause();
+        frank.currentTime = 0;
+      }, 1250);
+    };
+  </script>
+
+</body>
+
+</html>
